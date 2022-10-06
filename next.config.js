@@ -2,6 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
+  images: {
+    domains: ["rb.gy", "image.tmdb.org"],
+    formats: ["image/avif", "image/webp"],
+  },
+};
 
 module.exports = nextConfig
