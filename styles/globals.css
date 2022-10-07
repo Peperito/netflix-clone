@@ -10,7 +10,7 @@
     background: opacity-0;
   }
   html::-webkit-scrollbar-thumb {
-    background: red;
+    background: orange;
   }
 
   body {
@@ -36,6 +36,10 @@
   .thumbrow {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+  }
+
+  .input {
+    @apply w-full rounded bg-[#333] px-5 py-3.5 placeholder-gray-600 focus:outline-none focus:ring focus:ring-orange-400
   }
 }
 
