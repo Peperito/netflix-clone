@@ -21,7 +21,7 @@ function Banner({netFlixOriginals}: Props) {
     const desc = typeof movie?.overview == "string" &&  movie?.overview.length > 200 ? `${movie?.overview.slice(0, 199)}...` : movie?.overview
 
     return (
-      <div className="flex flex-col space-y-2 py-20 md:space-y-36 lg:justify-end lg:pb-12">
+      <div className="flex flex-col space-y-4 py-20 md:space-y-36 lg:justify-end lg:pb-12">
           <div className="absolute top-0 left-0 h-[95vh] w-full -z-10">
             <Image src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`} alt="Movie Poster" layout="fill" objectFit="cover" />
           </div>

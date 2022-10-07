@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Banner from '../components/Banner'
+import BigRow from '../components/BigRow'
 import Header from '../components/Header'
 import Row from '../components/Row'
 import useAuth from '../hooks/useAuth'
@@ -63,7 +64,7 @@ const Home = ({ netFlixOriginals, actionMovies, comedyMovies, documentaries, hor
   return (
     <div className='relative h-screen bg-gradient-to-b'>
       <Head>
-        <title>Home - Netflix</title>
+        <title>Home - Netflix-Clone</title>
         <link rel="icon" href='/favicon.ico'/>
       </Head>
     
@@ -71,9 +72,9 @@ const Home = ({ netFlixOriginals, actionMovies, comedyMovies, documentaries, hor
 
     <main className='relative pl-6 pb-24 lg:space-y-20 lg:pl-16'>
       <Banner netFlixOriginals={netFlixOriginals} />
-      <section className='md:space-y-12'>
+      <section className='md:space-y-12 md:-ml-8'>
         <Row title="Trending Now" movies={trendingNow} />
-        <Row title="Top rated" movies={topRated} />
+        <BigRow title="Top rated" movies={topRated} />
         <Row title="Action Movies" movies={actionMovies} />
         <Row title="Comedies" movies={comedyMovies} />
         <Row title="Documentaries" movies={documentaries} />

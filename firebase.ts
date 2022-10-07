@@ -12,7 +12,7 @@ const firebaseConfig = {
   projectId: "netflix-clone-vincep",
   storageBucket: "netflix-clone-vincep.appspot.com",
   messagingSenderId: "697758410357",
-  appId: "1:697758410357:web:3501def3f1e07ffa5c7a3c",
+  appId: process.env.NEXT_PUBLIC_API_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
