@@ -29,11 +29,16 @@ function Row({title, movies } : Props) {
   
 
   return (
-    <div className="flex flex-col relative h-40 space-y-1 md:space-y-2 md:mt-14">
+    <div className="flex flex-col relative h-40 space-y-1 md:space-y-2 md:mt-14 ">
 
         <h2 className="w-56 cursor-pointer text-md font-semibold text-gray-200 hover:text-white transition duration-200 md:text-2xl">{title}</h2>
 
         <div className="group relative md:-ml-2 flex justify-between">
+            <div className={`absolute top-0 bottom-0 z-40 m-auto w-14 bg-gradient-to-r from-black h-28 md:h-36 
+            cursor-pointer transition opacity-0 group-hover:opacity-70 ${
+              !isMoved && 'hidden'
+            }`}>
+            </div>
             <ChevronLeftIcon 
             className={`absolute top-0 bottom-0 left-2 z-40 m-auto h-9 w-9 text-white md:h-12 md:w-12
             cursor-pointer transition opacity-0 group-hover:opacity-100 hover:scale-125 ${
@@ -41,13 +46,16 @@ function Row({title, movies } : Props) {
             }`}
             onClick={() => handleClick("left")}
             />
-
-            <div className="flex items-center space-x-1 overflow-x-scroll md:space-x-2 thumbrow " ref={rowRef}>
+            
+            <div className="flex items-center space-x-1 overflow-x-scroll md:space-x-2 thumbrow overflow-y-hidden" ref={rowRef}>
               {movies.map((movie) => (
                 <Thumbnail key={movie.id} movie={movie}/>
               ))}
             </div>
-
+              
+            <div className={`absolute top-0 bottom-0 z-40 right-0 m-auto w-14 bg-gradient-to-l from-black h-28 md:h-36 
+            cursor-pointer transition opacity-0 group-hover:opacity-70`}>
+            </div>
             <ChevronRightIcon 
             className="absolute top-0 bottom-0 right-2 z-40 m-auto h-9 w-9 text-white  md:h-12 md:w-12
             cursor-pointer transition opacity-0 group-hover:opacity-100 hover:scale-125" 
