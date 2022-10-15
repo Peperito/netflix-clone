@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { useEffect, useState } from 'react'
 import Banner from '../components/Banner'
 import BigRow from '../components/BigRow'
 import Header from '../components/Header'
@@ -7,6 +8,7 @@ import Row from '../components/Row'
 import useAuth from '../hooks/useAuth'
 import { Movie } from '../typings'
 import requests from "../utils/requests"
+import ModalWidow from '../components/ModalWidow'
 
 export const getServerSideProps = async () => {
   const [
@@ -80,9 +82,11 @@ const Home = ({ netFlixOriginals, actionMovies, comedyMovies, documentaries, hor
         <Row title="Documentaries" movies={documentaries} />
         <Row title="Horror" movies={horrorMovies} />
       </section>
+        <ModalWidow />
     </main>
   </div>
   )
 }
 
 export default Home
+

@@ -37,21 +37,17 @@ function Header() {
             <SearchIcon className="hidden sm:inline h-6 w-6" />
             <p className="headerlink hidden lg:inline">Kids</p>
             <BellIcon className="h-6 w-6" />
-            <div>
-            <Link href="/account" >
-                    <>
-                    <Image
-                      src="https://rb.gy/g1pwyx"
-                      alt="Landscape picture"
-                      width={50}
-                      height={50}
-                      className="rounded-md"
-                    />
-                    </>
-            </Link>
-            <button onClick={logOut}>Logout</button>
+            {/* <Link href="/account" >
+              <Image
+                src="https://rb.gy/g1pwyx"
+                alt="Landscape picture"
+                width={50}
+                height={50}
+                className="rounded-md"
+              />
+            </Link> */}
+            <button onClick={logOut} className="lg:right-8 p-2 border border-white rounded">Logout</button>
             </div>
-        </div>
     </header>
   )
 }
